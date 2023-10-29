@@ -49,7 +49,10 @@
 
     <!-- Navar Start -->
     <section>
-      <nav aria-label="" class="navbar navbar-expand-lg bg-white">
+      <nav
+        aria-label=""
+        class="navbar navbar-expand-lg bg-white position-fixed z-3 w-100"
+      >
         <div class="container">
           <a class="navbar-brand" href="#">
             <img src="assets/logo_ubsi.png" alt="" />
@@ -68,7 +71,10 @@
           <div class="collapse navbar-collapse" id="navbarNavDropdown">
             <ul class="navbar-nav ms-auto gap-3">
               <li class="nav-item">
-                <a class="nav-link text-black" aria-current="page" href="#"
+                <a
+                  class="nav-link text-black"
+                  aria-current="page"
+                  href="#"
                   >Beranda</a
                 >
               </li>
@@ -132,8 +138,40 @@
         </div>
       </nav>
     </section>
-
     <!-- Navbar end -->
+
+    <!-- Hero section start -->
+    <section
+      style="
+        background-image: url('./assets/hero.png');
+        padding: 200px 0 200px 0;
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+      "
+    >
+      <div class="container">
+        <div class="row justify-content-md-center">
+          <div
+            class="col-12 col-md-11 col-lg-9 col-xl-7 col-xxl-6 text-center text-white mt-5"
+          >
+            <h6 class="fw-bold mb-3">UNTUK MASA DEPAN YANG LEBIH BAIK</h6>
+            <h1 class="display-2 mb-4 fw-bold">
+              Kuliah...? <span class="text-warning">BSI Aja!!</span>
+            </h1>
+
+            <button
+              type="button"
+              class="btn btn-light btn-lg px-5 py-3 rounded-2 text-primary fw-medium"
+            >
+              Ayo Mulai
+              <iconify-icon icon="mingcute:down-fill"></iconify-icon>
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Hero section end -->
 
     <!-- Script Bootstrap -->
     <script
