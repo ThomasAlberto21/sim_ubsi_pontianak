@@ -6,12 +6,12 @@
     <title>Admin | Kegiatan</title>
 
     <!-- Theme style -->
-    <link rel="stylesheet" href="../dist/css/adminlte.min.css" />
+    <link rel="stylesheet" href="../../dist/css/adminlte.min.css" />
 
     <!-- Style CSS -->
     <link rel="stylesheet" href="/styles/style.css" />
   </head>
-  <body class="hold-transition sidebar-mini">
+  <body>
     <div class="wrapper">
       <!-- Navbar -->
       <nav class="main-header navbar navbar-expand navbar-white navbar-light">
@@ -26,11 +26,10 @@
           </li>
         </ul>
       </nav>
-      <!-- /.navbar -->
+      <!-- Navbar -->
 
-      <!-- Main Sidebar Container -->
+      <!-- Sidebar -->
       <aside class="main-sidebar sidebar-dark-primary elevation-4">
-        <!-- Sidebar -->
         <div class="sidebar">
           <div class="user-panel mt-3 pb-3 mb-3 d-flex">
             <div class="image">
@@ -93,6 +92,7 @@
           </nav>
         </div>
       </aside>
+      <!-- Sidebar -->
 
       <!-- Content Wrapper. Contains page content -->
       <div class="content-wrapper">
@@ -100,7 +100,7 @@
           <div class="container-fluid">
             <div class="row mb-2">
               <div class="col-sm-6">
-                <h1 class="m-0">Beranda</h1>
+                <h1 class="m-0">Kegiatan</h1>
               </div>
             </div>
           </div>
@@ -111,8 +111,47 @@
           <div class="container-fluid">
             <div class="card">
               <div class="card-body">
-                <h2>Selamat Datang</h2>
-                <p class="opacity-25">Di halaman Beranda</p>
+                <form method="post" action="#">
+                  <div class="form-group">
+                    <label>Gambar</label>
+                    <input
+                      class="form-control-file"
+                      type="file"
+                      name="gambar"
+                    />
+                  </div>
+                  <div class="form-group">
+                    <label>Kegiatan</label>
+                    <input
+                      name="nama_kegiatan"
+                      class="form-control py-4"
+                      type="text"
+                      placeholder="Masukkan Nama Kegiatan"
+                    />
+                  </div>
+                  <div class="form-group">
+                    <label>Tanggal</label>
+                    <input
+                      class="form-control py-4"
+                      type="date"
+                      name="tanggal"
+                    />
+                  </div>
+                  <div class="form-group">
+                    <label>Deskripsi</label>
+                    <textarea
+                      class="form-control py-3"
+                      name="deskripsi"
+                      rows="10"
+                      placeholder="Masukkan Deskripsi Disini"
+                    ></textarea>
+                  </div>
+
+                  <a href="#" class="btn btn-primary w-100 mb-2 py-3"
+                    >Tambah Kegiatan</a
+                  >
+                  <a href="#" class="btn btn-danger w-100 py-3"> Batal </a>
+                </form>
               </div>
             </div>
           </div>
@@ -122,11 +161,11 @@
     <!-- ./wrapper -->
 
     <!-- jQuery -->
-    <script src="../plugins/jquery/jquery.min.js"></script>
+    <script src="../../plugins/jquery/jquery.min.js"></script>
     <!-- Bootstrap 4 -->
-    <script src="../plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="../../plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
     <!-- AdminLTE App -->
-    <script src="../dist/js/adminlte.min.js"></script>
+    <script src="../../dist/js/adminlte.min.js"></script>
     <!-- Iconify -->
     <script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js"></script>
   </body>
