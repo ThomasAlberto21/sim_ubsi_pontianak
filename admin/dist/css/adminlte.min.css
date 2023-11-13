@@ -6333,6 +6333,7 @@ a.disabled.mailbox-attachment-close {
 }
 .bg-primary {
   background-color: #007bff !important;
+  color: #fff !important;
 }
 a.bg-primary:focus,
 a.bg-primary:hover,
