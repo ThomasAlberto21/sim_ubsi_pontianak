@@ -124,7 +124,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
           <img src="<?= base_url('assets/images/ubsi.png') ?>" alt="sejarah" class="w-100 h-100 rounded-3" />
         </div>
         <div class="col-lg-8 my-3">
-          <h4 class="fw-bold">Sejarah UBSI</h4>
+          <h4>Sejarah UBSI</h4>
           <p class="opacity-50">UBSI Pontianak</p>
           <p class="opacity-75 lh-lg mb-5" style="text-align: justify">
             Perubahan Akademik Bina Sarana Informatika (BSI) menjadi
@@ -155,7 +155,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
   <!-- Prodi Start -->
   <section>
     <div class="container my-5">
-      <h1 class="fw-bold">Program Studi</h1>
+      <h1>Program Studi</h1>
       <p class="opacity-50">
         Apa saja program studi yang terdapat di kampus UBSI Kota Pontianak ?
       </p>
