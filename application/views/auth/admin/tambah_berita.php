@@ -18,11 +18,11 @@
                       <form method="post" action="<?= base_url("berita/insert_berita") ?>" enctype="multipart/form-data">
                           <div class="form-group">
                               <label>Gambar</label>
-                              <input class="form-control-file" type="file" name="gambar" />
+                              <input class="form-control-file" type="file" name="gambar" required />
                           </div>
                           <div class="form-group">
                               <label>Berita</label>
-                              <input name="nama_berita" class="form-control py-4" type="text" placeholder="Masukkan Nama Berita" />
+                              <input name="nama_berita" class="form-control py-4" type="text" placeholder="Masukkan Nama Berita" required />
                           </div>
                           <!-- <div class="form-group">
                               <label>Tanggal</label>
@@ -30,7 +30,7 @@
                           </div> -->
                           <div class="form-group">
                               <label>Deskripsi</label>
-                              <textarea class="form-control py-3" name="deskripsi" rows="10" placeholder="Masukkan Deskripsi Disini"></textarea>
+                              <textarea class="form-control py-3" name="deskripsi" rows="10" placeholder="Masukkan Deskripsi Disini" required></textarea>
                           </div>
                           <button type="submit" class="btn btn-primary w-100 mb-2 py-3">Tambah Berita</button>
                           <a href="berita.html" class="btn btn-danger w-100 py-3">

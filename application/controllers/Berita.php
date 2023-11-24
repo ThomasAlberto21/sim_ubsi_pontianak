@@ -9,6 +9,18 @@ class Berita extends CI_Controller
         $this->load->model('Berita_model');
     }
 
+    public function index()
+    {
+        $data = array(
+            'record' => $this->Berita_model->read('berita'),
+        );
+        $data['judul'] = "Berita";
+        $this->load->view('template/header', $data);
+        $this->load->view('template/navbar', $data);
+        $this->load->view('berita/index', $data);
+        $this->load->view('template/footer', $data);
+    }
+
     public function insert_berita()
     {
         $config['upload_path'] = 'assets/images/berita/';
@@ -27,7 +39,7 @@ class Berita extends CI_Controller
             redirect('admin/berita', 'refresh');
         } else {
             // $this->session->set_flashdata('message', 'swal("Gagal", "Galeri Gagal Di Tambah Kan", "error");');
-            redirect('admin/berita', 'refresh');
+            redirect('admin/tambah_berita', 'refresh');
         }
     }
 
