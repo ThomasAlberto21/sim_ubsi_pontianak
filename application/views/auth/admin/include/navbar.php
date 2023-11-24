@@ -14,7 +14,7 @@
         <div class="sidebar">
             <div class="user-panel mt-3 pb-3 mb-3 d-flex">
                 <div class="image">
-                    <img src="<?= base_url(); ?>/assets/images/me.jpg" class="img-circle elevation-2" alt="User Image" />
+                    <img src="<?= base_url(); ?>/assets/images/guest.jpg" class="img-circle elevation-2" alt="User Image" />
                 </div>
                 <div class="info">
                     <a href="<?= base_url('admin'); ?>" class="d-block">Admin Ganteng</a>

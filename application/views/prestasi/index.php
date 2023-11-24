@@ -1,6 +1,7 @@
 <!-- Hero section start -->
 <section style="
-        background-image: url('../assets/hero.png');
+        background-image: url('<?= base_url(); ?>assets/images/hero.png');
+        padding: 100px 0 100px 0;
         padding: 100px 0 100px 0;
         background-size: cover;
         background-position: center;

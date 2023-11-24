@@ -1,6 +1,6 @@
  <!-- Hero section start -->
  <section style="
-        background-image: url('../assets/hero.png');
+        background-image: url('<?= base_url(); ?>assets/images/hero.png');
         padding: 100px 0 100px 0;
         background-size: cover;
         background-position: center;
@@ -24,7 +24,7 @@
      <div class="container my-5">
          <div class="row">
              <div class="col-lg-4">
-                 <img src="/assets/pak_rektor.jpg" alt="Gambar Pak Rektor" class="rounded-1 img-fluid w-100" />
+                 <img src="<?= base_url(); ?>assets/images/pak_rektor.jpg" alt="Gambar Pak Rektor" class="rounded-1 img-fluid w-100" />
              </div>
              <div class="col-lg-8 mt-3">
                  <h5>SAMBUTAN REKTOR UBSI</h5>

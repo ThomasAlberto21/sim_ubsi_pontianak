@@ -45,7 +45,7 @@
           2018/2019....
         </p>
 
-        <a href="sejarahUBSI.html" type="button" class="text-primary mt-5 px-0 align-items-center d-flex gap-2 text-decoration-none">
+        <a href="<?= base_url('tentang/sejarah') ?>" type="button" class="text-primary mt-5 px-0 align-items-center d-flex gap-2 text-decoration-none">
           Baca Selengkapnya
           <iconify-icon icon="formkit:arrowright"></iconify-icon>
         </a>
@@ -113,7 +113,7 @@
           meningkatkan wawasan dan juga skill para mahasiswanya
         </p>
 
-        <a href="/kegiatan/Kegiatan.html" type="button" class="text-primary mt-5 px-0 align-items-center d-flex gap-2 text-decoration-none">
+        <a href="<?= base_url('kegiatan') ?>" type="button" class="text-primary mt-5 px-0 align-items-center d-flex gap-2 text-decoration-none">
           Lihat Kegiatan
           <iconify-icon icon="formkit:arrowright"></iconify-icon>
         </a>
@@ -132,7 +132,7 @@
         <p class="opacity-75">Berita UBSI Pontianak</p>
       </div>
 
-      <a href="/berita/Berita.html" type="button" class="text-primary mt-5 px-0 align-items-center d-flex gap-2 text-decoration-none">
+      <a href="<?= base_url('berita') ?>" type="button" class="text-primary mt-5 px-0 align-items-center d-flex gap-2 text-decoration-none">
         Lihat Berita
         <iconify-icon icon="formkit:arrowright"></iconify-icon>
       </a>
@@ -266,7 +266,7 @@
         <p class="opacity-75">Prestasi UBSI Pontianak</p>
       </div>
 
-      <a href="/prestasi/Prestasi.html" type="button" class="text-primary mt-5 px-0 align-items-center d-flex gap-2 text-decoration-none">
+      <a href="<?= base_url('prestasi') ?>" type="button" class="text-primary mt-5 px-0 align-items-center d-flex gap-2 text-decoration-none">
         Lihat Prestasi
         <iconify-icon icon="formkit:arrowright"></iconify-icon>
       </a>
