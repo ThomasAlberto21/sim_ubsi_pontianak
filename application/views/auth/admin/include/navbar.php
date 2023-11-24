@@ -14,10 +14,10 @@
         <div class="sidebar">
             <div class="user-panel mt-3 pb-3 mb-3 d-flex">
                 <div class="image">
-                    <img src="/assets/me.jpg" class="img-circle elevation-2" alt="User Image" />
+                    <img src="<?= base_url(); ?>/assets/images/me.jpg" class="img-circle elevation-2" alt="User Image" />
                 </div>
                 <div class="info">
-                    <a href="#" class="d-block">Admin Ganteng</a>
+                    <a href="<?= base_url('admin'); ?>" class="d-block">Admin Ganteng</a>
                 </div>
             </div>
 

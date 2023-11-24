@@ -7,6 +7,7 @@ class Admin extends CI_Controller
     public function index()
     {
         $this->load->view('template/auth_header');
+        $this->load->view('auth/admin/include/navbar');
         $this->load->view('auth/index');
         $this->load->view('template/auth_footer');
     }
