@@ -34,129 +34,37 @@
                                   </tr>
                               </thead>
                               <tbody>
-                                  <tr>
-                                      <th scope="row" class="text-center" style="width: 50px">
-                                          1.
-                                      </th>
-                                      <td>
-                                          <img src="/assets/berita/berita1.jpeg" alt="" class="w-100" />
-                                      </td>
-                                      <td>
-                                          Lewat BKOT Universitas BSI Ajak Orang Tua Mahasiswa Baru
-                                          Kenali Dunia Kampus
-                                      </td>
-                                      <td>Senin , 07 Agustus 2023 , 08:30 WIB</td>
-                                      <td>
-                                          Sebagai langkah awal dalam menyambut semester baru
-                                          ganjil 2023-2024, Kampus Digital Kreatif Universitas BSI
-                                          (Bina Sarana Informatika) akan kembali menghadirkan BKOT
-                                          (Bincang Kampus Bersama Orang Tua).
-                                      </td>
+                                  <?php if (!empty($record)) : ?>
+                                  <?php endif; ?>
+                                  <?php $i = 1; ?>
+                                  <?php foreach ($record as $row) : ?>
+                                      <tr>
+                                          <th scope="row" class="text-center" style="width: 50px">
+                                              <?= $i++; ?>
+                                          </th>
+                                          <td>
+                                              <img src="<?= base_url() . 'assets/images/berita/' . $row['gambar']; ?>" alt="" class="w-100" />
+                                          </td>
+                                          <td>
+                                              <?= $row['nama_berita']; ?>
+                                          </td>
+                                          <td>Senin , 07 Agustus 2023 , 08:30 WIB</td>
+                                          <td>
+                                              <?= $row['deskripsi']; ?>
+                                          </td>
 
-                                      <td>
-                                          <div class="d-flex">
-                                              <a href="#" class="btn btn-primary mr-2 text-white">
-                                                  <iconify-icon icon="mdi:pencil" style="font-size: 25px"></iconify-icon>
-                                              </a>
-                                              <a href="#" class="btn btn-danger">
-                                                  <iconify-icon icon="mdi:trash" style="font-size: 25px"></iconify-icon>
-                                              </a>
-                                          </div>
-                                      </td>
-                                  </tr>
-                                  <tr>
-                                      <th scope="row" class="text-center" style="width: 50px">
-                                          2.
-                                      </th>
-                                      <td>
-                                          <img src="/assets/berita/berita2.jpg" alt="" class="w-100" />
-                                      </td>
-                                      <td>
-                                          Tingkatkan Sinergi Kampus Dengan Orang Tua, Universitas
-                                          BSI akan Gelar BKOT
-                                      </td>
-                                      <td>Senin , 07 Agustus 2023 , 08:30 WIB</td>
-                                      <td>
-                                          Dalam rangka menyiapkan lulusan bertalenta digital,
-                                          Universitas BSI (Bina Sarana Informatika) akan
-                                          mengadakan acara Bincang Kampus bersama Orang Tua
-                                          (BKOT). Acara ini akan digelar pada Sabtu, 12 Agustus
-                                          2023 di Universitas BSI kampus Kramat 98.
-                                      </td>
-
-                                      <td>
-                                          <div class="d-flex">
-                                              <a href="#" class="btn btn-primary mr-2 text-white">
-                                                  <iconify-icon icon="mdi:pencil" style="font-size: 25px"></iconify-icon>
-                                              </a>
-                                              <a href="#" class="btn btn-danger">
-                                                  <iconify-icon icon="mdi:trash" style="font-size: 25px"></iconify-icon>
-                                              </a>
-                                          </div>
-                                      </td>
-                                  </tr>
-                                  <tr>
-                                      <th scope="row" class="text-center" style="width: 50px">
-                                          3.
-                                      </th>
-                                      <td>
-                                          <img src="/assets/berita/berita3.jpeg" alt="" class="w-100" />
-                                      </td>
-                                      <td>
-                                          Capaian UBSI Di Usia BSI Ke-33 Tahun, Menyambut Hari
-                                          Baru
-                                      </td>
-                                      <td>Senin , 07 Agustus 2023 , 08:30 WIB</td>
-                                      <td>
-                                          Bina Sarana Informatika kini telah menginjak usia 33
-                                          tahun. Sepanjang itu tentu BSI telah melahirkan banyak
-                                          lulusan terbaiknya yang mampu berkompetisi dan berdaya
-                                          saing tinggi.Dalam Dies Natalis ke-33 tahun, BSI
-                                          melangsungkan kegiatan secara terbatas.
-                                      </td>
-
-                                      <td>
-                                          <div class="d-flex">
-                                              <a href="#" class="btn btn-primary mr-2 text-white">
-                                                  <iconify-icon icon="mdi:pencil" style="font-size: 25px"></iconify-icon>
-                                              </a>
-                                              <a href="#" class="btn btn-danger">
-                                                  <iconify-icon icon="mdi:trash" style="font-size: 25px"></iconify-icon>
-                                              </a>
-                                          </div>
-                                      </td>
-                                  </tr>
-                                  <tr>
-                                      <th scope="row" class="text-center" style="width: 50px">
-                                          3.
-                                      </th>
-                                      <td>
-                                          <img src="/assets/berita/berita4.jpeg" alt="" class="w-100" />
-                                      </td>
-                                      <td>
-                                          Universitas BSI Kampus Pontianak Jamin Kampusnya Tak Ada
-                                          Perploncoan
-                                      </td>
-                                      <td>Senin , 07 Agustus 2023 , 08:30 WIB</td>
-                                      <td>
-                                          Pengenalan Kehidupan Kampus Bagi Mahasiswa Baru (PKKMB)
-                                          merupakan wahana bagi pemimpin perguruan tinggi untuk
-                                          memperkenalkan dan mempersiapkan mahasiswa baru (maba)
-                                          dalam proses transisi menjadi mahasiswa yang dewasa dan
-                                          mandiri.
-                                      </td>
-
-                                      <td>
-                                          <div class="d-flex">
-                                              <a href="#" class="btn btn-primary mr-2 text-white">
-                                                  <iconify-icon icon="mdi:pencil" style="font-size: 25px"></iconify-icon>
-                                              </a>
-                                              <a href="#" class="btn btn-danger">
-                                                  <iconify-icon icon="mdi:trash" style="font-size: 25px"></iconify-icon>
-                                              </a>
-                                          </div>
-                                      </td>
-                                  </tr>
+                                          <td>
+                                              <div class="d-flex">
+                                                  <a href="#" class="btn btn-primary mr-2 text-white">
+                                                      <iconify-icon icon="mdi:pencil" style="font-size: 25px"></iconify-icon>
+                                                  </a>
+                                                  <a href="<?php echo base_url('berita/delete_berita/' . $row['id_berita']) ?>" onclick="return confirm('yakin');" class="btn btn-danger">
+                                                      <iconify-icon icon="mdi:trash" style="font-size: 25px"></iconify-icon>
+                                                  </a>
+                                              </div>
+                                          </td>
+                                      </tr>
+                                  <?php endforeach; ?>
                               </tbody>
                           </table>
                       </div>

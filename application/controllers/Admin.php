@@ -3,6 +3,11 @@ defined('BASEPATH') or exit('No direct script access allowed');
 
 class Admin extends CI_Controller
 {
+    function __construct()
+    {
+        parent::__construct();
+        $this->load->model('Berita_model');
+    }
 
     public function index()
     {
@@ -29,10 +34,13 @@ class Admin extends CI_Controller
 
     public function berita()
     {
-        $this->load->view('auth/admin/include/header');
-        $this->load->view('auth/admin/include/navbar');
-        $this->load->view('auth/admin/berita');
-        $this->load->view('auth/admin/include/footer');
+        $data = array(
+            'record' => $this->Berita_model->read('berita'),
+        );
+        $this->load->view('auth/admin/include/header', $data);
+        $this->load->view('auth/admin/include/navbar', $data);
+        $this->load->view('auth/admin/berita', $data);
+        $this->load->view('auth/admin/include/footer', $data);
     }
     public function tambah_berita()
     {
