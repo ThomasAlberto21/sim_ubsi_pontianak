@@ -35,100 +35,35 @@
                             </tr>
                         </thead>
                         <tbody>
-                            <tr>
-                                <th scope="row" class="text-center" style="width: 50px">
-                                    1.
-                                </th>
-                                <td>
-                                    <img src="/assets/kegiatan/kegiatan1.jpg" alt="" class="w-100" />
-                                </td>
-                                <td>UKM PECINTA ALAM UBSI</td>
-                                <td>Senin , 07 Agustus 2023 , 08:30 WIB</td>
-                                <td>
-                                    Organisasi calandra ini terbentuk karena ingin menampung
-                                    hobi dan kreatifitas mahasiswa/i universitas bina sarana
-                                    informatika yang berorientasi pada kegiatan alam bebas.
-                                    Kemudian tercetuslah nama "Calandra" asal kata dari
-                                    bahasa Yunani yang artinya "Senda gurau" dan disambung
-                                    dengan "adventures" Diresmikan pada tanggal 28 Agustus
-                                    1993 oleh ketua yayasan bina sarana informatika, Bapak
-                                    Herman P. Haryoso dan menjadi organisasi kegiatan
-                                    pertama yang ada di bina sarana informatika.
-                                </td>
+                            <?php if (!empty($record)) : ?>
+                                <?php $i = 1; ?>
+                                <?php foreach ($record as $row) : ?>
+                                    <tr>
+                                        <th scope="row" class="text-center" style="width: 50px">
+                                            <?= $i++; ?>
+                                        </th>
+                                        <td>
+                                            <img src="<?= base_url() . 'assets/images/kegiatan/' . $row['gambar']; ?>" alt="" class="w-100" />
+                                        </td>
+                                        <td><?= $row['nama_kegiatan']; ?></td>
+                                        <td>Senin , 07 Agustus 2023 , 08:30 WIB</td>
+                                        <td>
+                                            <?= $row['deskripsi']; ?>
+                                        </td>
 
-                                <td>
-                                    <div class="d-flex">
-                                        <a href="#" class="btn btn-primary mr-2 text-white">
-                                            <iconify-icon icon="mdi:pencil" style="font-size: 25px"></iconify-icon>
-                                        </a>
-                                        <a href="#" class="btn btn-danger">
-                                            <iconify-icon icon="mdi:trash" style="font-size: 25px"></iconify-icon>
-                                        </a>
-                                    </div>
-                                </td>
-                            </tr>
-                            <tr>
-                                <th scope="row" class="text-center" style="width: 50px">
-                                    2.
-                                </th>
-                                <td>
-                                    <img src="/assets/kegiatan/kegiatan2.jpg" alt="" class="w-100" />
-                                </td>
-                                <td>UKM Kerohanian Islam</td>
-                                <td>Senin , 07 Agustus 2023 , 08:30 WIB</td>
-                                <td>
-                                    UKM (Unit Kegiatan Mahasiswa ) Kerohanian Islam UBSI
-                                    (Universitas Bina Sarana Informatika) merupakan suatu
-                                    organisasi ke-Islaman di kalangan mahasiswa BSI yang
-                                    bergerak dibidang Da'wah, Pendidikan, Keterampilan, Seni
-                                    dan Olahraga serta Sosial Kemasyarakatan. Sejarah
-                                    singkat terkait dengan organisasi da’wah kampus pada era
-                                    akademi BSI terdahulu pernah terbentuk Badaris (Badan
-                                    Da’wah Rohani Islam).
-                                </td>
-
-                                <td>
-                                    <div class="d-flex">
-                                        <a href="#" class="btn btn-primary mr-2 text-white">
-                                            <iconify-icon icon="mdi:pencil" style="font-size: 25px"></iconify-icon>
-                                        </a>
-                                        <a href="#" class="btn btn-danger">
-                                            <iconify-icon icon="mdi:trash" style="font-size: 25px"></iconify-icon>
-                                        </a>
-                                    </div>
-                                </td>
-                            </tr>
-                            <tr>
-                                <th scope="row" class="text-center" style="width: 50px">
-                                    3.
-                                </th>
-                                <td>
-                                    <img src="/assets/kegiatan/kegiatan3.jpeg" alt="" class="w-100" />
-                                </td>
-                                <td>UKM Musik UBSI</td>
-                                <td>Senin , 07 Agustus 2023 , 08:30 WIB</td>
-                                <td>
-                                    UKM Musik memulai pertunjukkan pertamanya pada tahun
-                                    1997, dengan membuat pertunjukan pertama yaitu
-                                    background musik. Pada 15 September 1998, dibentuklah
-                                    organisasi unit kegiatan mahasiswa (ukm) musik di Bina
-                                    Sarana Informatika (BSI) yang didirikan oleh Rizka,
-                                    Parto , Parlin, Budi ,Jange da AA. Sifat organisasi ini
-                                    adalah kreatif edukatif , kekeluargaan, kebersamaan, dan
-                                    bertanggung Jawab.
-                                </td>
-
-                                <td>
-                                    <div class="d-flex">
-                                        <a href="#" class="btn btn-primary mr-2 text-white">
-                                            <iconify-icon icon="mdi:pencil" style="font-size: 25px"></iconify-icon>
-                                        </a>
-                                        <a href="#" class="btn btn-danger">
-                                            <iconify-icon icon="mdi:trash" style="font-size: 25px"></iconify-icon>
-                                        </a>
-                                    </div>
-                                </td>
-                            </tr>
+                                        <td>
+                                            <div class="d-flex">
+                                                <a href="#" class="btn btn-primary mr-2 text-white">
+                                                    <iconify-icon icon="mdi:pencil" style="font-size: 25px"></iconify-icon>
+                                                </a>
+                                                <a href="<?php echo base_url('kegiatan/delete_kegiatan/' . $row['id_kegiatan']) ?>" class="btn btn-danger">
+                                                    <iconify-icon icon="mdi:trash" style="font-size: 25px"></iconify-icon>
+                                                </a>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                <?php endforeach; ?>
+                            <?php endif; ?>
                         </tbody>
                     </table>
                 </div>

@@ -31,7 +31,7 @@ class Berita_model extends CI_Model
     }
     public function edit($id, $table)
     {
-        $this->db->where('ID', $id);
+        $this->db->where('id_berita', $id);
         $query = $this->db->get($table);
         if ($query->num_rows() > 0) {
             $data = $query->row();
@@ -45,7 +45,7 @@ class Berita_model extends CI_Model
 
     public function update($id, $data, $table)
     {
-        $this->db->where('ID', $id);
+        $this->db->where('id_berita', $id);
         $this->db->update($table, $data);
     }
     public function delete($id, $table)

@@ -15,7 +15,7 @@
             <div class="container-fluid">
                 <div class="card">
                     <div class="card-body">
-                        <form method="post" action="#">
+                        <form method="post" action="<?= base_url("kegiatan/insert_kegiatan") ?>" enctype="multipart/form-data">
                             <div class="form-group">
                                 <label>Gambar</label>
                                 <input class="form-control-file" type="file" name="gambar" />
@@ -24,16 +24,16 @@
                                 <label>Kegiatan</label>
                                 <input name="nama_kegiatan" class="form-control py-4" type="text" placeholder="Masukkan Nama Kegiatan" />
                             </div>
-                            <div class="form-group">
+                            <!-- <div class="form-group">
                                 <label>Tanggal</label>
                                 <input class="form-control py-4" type="date" name="tanggal" />
-                            </div>
+                            </div> -->
                             <div class="form-group">
                                 <label>Deskripsi</label>
                                 <textarea class="form-control py-3" name="deskripsi" rows="10" placeholder="Masukkan Deskripsi Disini"></textarea>
                             </div>
 
-                            <a href="#" class="btn btn-primary w-100 mb-2 py-3">Tambah Kegiatan</a>
+                            <button type="submit" class="btn btn-primary w-100 mb-2 py-3">Tambah Kegiatan</button>
                             <a href="kegiatan.html" class="btn btn-danger w-100 py-3"> Batal </a>
                         </form>
                     </div>

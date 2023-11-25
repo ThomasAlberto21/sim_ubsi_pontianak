@@ -7,6 +7,8 @@ class Admin extends CI_Controller
     {
         parent::__construct();
         $this->load->model('Berita_model');
+        $this->load->model('Kegiatan_model');
+        $this->load->model('Prestasi_model');
     }
 
     public function index()
@@ -19,10 +21,13 @@ class Admin extends CI_Controller
 
     public function kegiatan()
     {
-        $this->load->view('auth/admin/include/header');
-        $this->load->view('auth/admin/include/navbar');
-        $this->load->view('auth/admin/kegiatan');
-        $this->load->view('auth/admin/include/footer');
+        $data = array(
+            'record' => $this->Kegiatan_model->read('kegiatan'),
+        );
+        $this->load->view('auth/admin/include/header', $data);
+        $this->load->view('auth/admin/include/navbar', $data);
+        $this->load->view('auth/admin/kegiatan', $data);
+        $this->load->view('auth/admin/include/footer', $data);
     }
     public function tambah_kegiatan()
     {
@@ -52,10 +57,13 @@ class Admin extends CI_Controller
 
     public function prestasi()
     {
-        $this->load->view('auth/admin/include/header');
-        $this->load->view('auth/admin/include/navbar');
-        $this->load->view('auth/admin/prestasi');
-        $this->load->view('auth/admin/include/footer');
+        $data = array(
+            'record' => $this->Prestasi_model->read('prestasi'),
+        );
+        $this->load->view('auth/admin/include/header', $data);
+        $this->load->view('auth/admin/include/navbar', $data);
+        $this->load->view('auth/admin/prestasi', $data);
+        $this->load->view('auth/admin/include/footer', $data);
     }
     public function tambah_prestasi()
     {

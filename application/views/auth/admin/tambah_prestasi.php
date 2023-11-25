@@ -15,25 +15,24 @@
         <div class="container-fluid">
             <div class="card">
                 <div class="card-body">
-                    <form method="post" action="#">
+                    <form method="post" action="<?= base_url("prestasi/insert_prestasi") ?>" enctype="multipart/form-data">
                         <div class="form-group">
                             <label>Gambar</label>
                             <input class="form-control-file" type="file" name="gambar" />
                         </div>
                         <div class="form-group">
-                            <label>Kegiatan</label>
-                            <input name="nama_kegiatan" class="form-control py-4" type="text" placeholder="Masukkan Prestasi" />
+                            <label>Prestasi</label>
+                            <input name="nama_prestasi" class="form-control py-4" type="text" placeholder="Masukkan Prestasi" />
                         </div>
-                        <div class="form-group">
+                        <!-- <div class="form-group">
                             <label>Tanggal</label>
                             <input class="form-control py-4" type="date" name="tanggal" />
-                        </div>
+                        </div> -->
                         <div class="form-group">
                             <label>Deskripsi</label>
                             <textarea class="form-control py-3" name="deskripsi" rows="10" placeholder="Masukkan Deskripsi Disini"></textarea>
                         </div>
-
-                        <a href="#" class="btn btn-primary w-100 mb-2 py-3">Tambah Prestasi</a>
+                        <button type="submit" class="btn btn-primary w-100 mb-2 py-3">Tambah Prestasi</button>
                         <a href="kegiatan.html" class="btn btn-danger w-100 py-3">
                             Batal
                         </a>
