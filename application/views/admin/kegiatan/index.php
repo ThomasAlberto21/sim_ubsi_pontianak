@@ -53,7 +53,7 @@
 
                                         <td>
                                             <div class="d-flex">
-                                                <a href="#" class="btn btn-primary mr-2 text-white">
+                                                <a href="<?php echo base_url('kegiatan/edit_kegiatan/' . $row['id_kegiatan']) ?>" class="btn btn-primary mr-2 text-white">
                                                     <iconify-icon icon="mdi:pencil" style="font-size: 25px"></iconify-icon>
                                                 </a>
                                                 <a href="<?php echo base_url('kegiatan/delete_kegiatan/' . $row['id_kegiatan']) ?>" class="btn btn-danger">

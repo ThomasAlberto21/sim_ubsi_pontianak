@@ -55,7 +55,7 @@
 
                                           <td>
                                               <div class="d-flex">
-                                                  <a href="#" class="btn btn-primary mr-2 text-white">
+                                                  <a href="<?php echo base_url('berita/edit_berita/' . $row['id_berita']) ?>" class=" btn btn-primary mr-2 text-white">
                                                       <iconify-icon icon="mdi:pencil" style="font-size: 25px"></iconify-icon>
                                                   </a>
                                                   <a href="<?php echo base_url('berita/delete_berita/' . $row['id_berita']) ?>" onclick="return confirm('yakin');" class="btn btn-danger">

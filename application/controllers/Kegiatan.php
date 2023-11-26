@@ -33,19 +33,57 @@ class Kegiatan extends CI_Controller
                 'gambar' => $gambar,
             );
             $this->db->insert('kegiatan', $data);
-            // $this->session->set_flashdata('message', '<div class="alert alert-success alert-dismissible fade show" role="alert"><strong>Berhasil</strong><button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button></div>');
-            redirect('admin/kegiatan', 'refresh');
+            redirect('admin/kegiatan/index', 'refresh');
         } else {
-            // $this->session->set_flashdata('message', 'swal("Gagal", "Galeri Gagal Di Tambah Kan", "error");');
-            redirect('admin/tambah_kegiatan', 'refresh');
+            redirect('admin/kegiatan/tambah_kegiatan', 'refresh');
         }
+    }
+
+
+    public function edit_kegiatan($id = 0)
+    {
+        $this->load->helper('form');
+        $this->load->library('form_validation');
+        if ($this->form_validation->run() == false) {
+            $data = array(
+                'title' => 'Edit Kegiatan',
+                'record' => $this->Kegiatan_model->edit($id, 'kegiatan')
+            );
+            $this->load->view('admin/include/header', $data);
+            $this->load->view('admin/include/navbar', $data);
+            $this->load->view('admin/kegiatan/edit_kegiatan', $data);
+            $this->load->view('admin/include/footer', $data);
+        } else {
+            //  
+        }
+    }
+
+    public function update_kegiatan()
+    {
+        $config['upload_path'] = 'assets/images/kegiatan/';
+        $config['allowed_types'] = 'gif|jpg|png|jpeg|jfif';
+        $this->load->library('upload', $config);
+        $id = $this->input->post('id_kegiatan');
+        $old_data = $this->Kegiatan_model->get_kegiatan_by_id($id);
+        if ($this->upload->do_upload('gambar')) {
+            $upload_data = $this->upload->data();
+            $gambar = $upload_data['file_name'];
+        } else {
+            $gambar = $old_data['gambar'];
+        }
+        $data = array(
+            'nama_kegiatan' => $this->input->post('nama_kegiatan'),
+            'deskripsi' => $this->input->post('deskripsi'),
+            'gambar' => $gambar,
+        );
+        $this->Kegiatan_model->update($id, $data, 'kegiatan');
+        redirect('admin/kegiatan/index', 'refresh');
     }
 
     public function delete_kegiatan($id = 0)
     {
 
         $this->Kegiatan_model->delete($id, 'kegiatan');
-        // $this->session->set_flashdata('message', 'swal("Berhasil", "Data Berhasil Di Hapus", "success");');
-        redirect(base_url('admin/kegiatan'));
+        redirect(base_url('admin/kegiatan/index'));
     }
 }

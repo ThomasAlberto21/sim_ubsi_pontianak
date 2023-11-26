@@ -35,19 +35,56 @@ class Berita extends CI_Controller
                 'gambar' => $gambar,
             );
             $this->db->insert('berita', $data);
-            // $this->session->set_flashdata('message', '<div class="alert alert-success alert-dismissible fade show" role="alert"><strong>Berhasil</strong><button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button></div>');
-            redirect('admin/berita', 'refresh');
+            redirect('admin/berita/index', 'refresh');
         } else {
-            // $this->session->set_flashdata('message', 'swal("Gagal", "Galeri Gagal Di Tambah Kan", "error");');
-            redirect('admin/tambah_berita', 'refresh');
+            redirect('admin/berita/tambah_berita', 'refresh');
         }
+    }
+
+    public function edit_berita($id = 0)
+    {
+        $this->load->helper('form');
+        $this->load->library('form_validation');
+        if ($this->form_validation->run() == false) {
+            $data = array(
+                'title' => 'Edit Berita',
+                'record' => $this->Berita_model->edit($id, 'berita')
+            );
+            $this->load->view('admin/include/header', $data);
+            $this->load->view('admin/include/navbar', $data);
+            $this->load->view('admin/berita/edit_berita', $data);
+            $this->load->view('admin/include/footer', $data);
+        } else {
+            //  
+        }
+    }
+
+    public function update_berita()
+    {
+        $config['upload_path'] = 'assets/images/berita/';
+        $config['allowed_types'] = 'gif|jpg|png|jpeg|jfif';
+        $this->load->library('upload', $config);
+        $id = $this->input->post('id_berita');
+        $old_data = $this->Berita_model->get_berita_by_id($id);
+        if ($this->upload->do_upload('gambar')) {
+            $upload_data = $this->upload->data();
+            $gambar = $upload_data['file_name'];
+        } else {
+            $gambar = $old_data['gambar'];
+        }
+        $data = array(
+            'nama_berita' => $this->input->post('nama_berita'),
+            'deskripsi' => $this->input->post('deskripsi'),
+            'gambar' => $gambar,
+        );
+        $this->Berita_model->update($id, $data, 'berita');
+        redirect('admin/berita/index', 'refresh');
     }
 
     public function delete_berita($id = 0)
     {
 
         $this->Berita_model->delete($id, 'berita');
-        // $this->session->set_flashdata('message', 'swal("Berhasil", "Data Berhasil Di Hapus", "success");');
-        redirect(base_url('admin/berita'));
+        redirect(base_url('admin/berita/index'));
     }
 }

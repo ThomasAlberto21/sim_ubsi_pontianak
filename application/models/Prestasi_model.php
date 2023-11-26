@@ -58,4 +58,8 @@ class Prestasi_model extends CI_Model
     {
         return $this->db->count_all_results($table);
     }
+    public function get_prestasi_by_id($id)
+    {
+        return $this->db->get_where('prestasi', ['id_prestasi' => $id])->row_array();
+    }
 }

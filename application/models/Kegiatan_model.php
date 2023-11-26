@@ -58,4 +58,16 @@ class Kegiatan_model extends CI_Model
     {
         return $this->db->count_all_results($table);
     }
+    public function get_kegiatan_by_id($id)
+    {
+        return $this->db->get_where('kegiatan', ['id_kegiatan' => $id])->row_array();
+    }
+    public function limitkegiatan($limit)
+    {
+        $query = "SELECT * 
+                FROM kegiatan
+              ORDER BY id_kegiatan DESC LIMIT $limit
+    ";
+        return $this->db->query($query)->result_array();
+    }
 }

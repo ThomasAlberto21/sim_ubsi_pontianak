@@ -26,7 +26,6 @@ class Berita_model extends CI_Model
         } else {
             $data = NULL;
         }
-
         return $data;
     }
     public function edit($id, $table)
@@ -48,6 +47,7 @@ class Berita_model extends CI_Model
         $this->db->where('id_berita', $id);
         $this->db->update($table, $data);
     }
+
     public function delete($id, $table)
     {
         $this->db->where('id_berita', $id);
@@ -58,4 +58,10 @@ class Berita_model extends CI_Model
     {
         return $this->db->count_all_results($table);
     }
+
+    public function get_berita_by_id($id)
+    {
+        return $this->db->get_where('berita', ['id_berita' => $id])->row_array();
+    }
+    
 }
