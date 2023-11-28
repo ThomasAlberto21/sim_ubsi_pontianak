@@ -40,7 +40,7 @@
                                 <figcaption class="blockquote-footer mt-2">
                                     <cite title="Source Title">#berita</cite>
                                 </figcaption>
-                                <a href="detailBerita.html" class="h5 text-decoration-none card-title">
+                                <a href="<?= base_url("berita/detail/" . $row['id_berita']) ?>" class=" h5 text-decoration-none card-title">
                                     <?= $row['nama_berita']; ?>
                                 </a>
                                 <p class="card-text opacity-75 mt-4" style="text-align: justify">

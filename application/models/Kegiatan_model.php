@@ -70,4 +70,9 @@ class Kegiatan_model extends CI_Model
     ";
         return $this->db->query($query)->result_array();
     }
+    public function baca_detail($id)
+    {
+        $query = $this->db->query("SELECT * FROM kegiatan WHERE id_kegiatan='$id'");
+        return $query->result_array();
+    }
 }

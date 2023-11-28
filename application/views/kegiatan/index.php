@@ -33,106 +33,35 @@
 
             <div class="my-5 col-md-12">
                 <!-- Kegiatan 1 -->
-                <div class="card border-0 shadow mb-3">
-                    <div class="row">
-                        <div class="col-lg-4">
-                            <img src="/assets/kegiatan/kegiatan1.jpg" alt="Kegiatan 1" class="w-100 h-100" />
-                        </div>
-
-                        <div class="col-lg-8">
-                            <div class="card-body">
-                                <h4 class="card-title mb-2">UKM PECINTA ALAM UBSI</h4>
-                                <div class="d-flex align-items-center gap-4 opacity-50 mb-4">
-                                    <iconify-icon icon="clarity:date-line"></iconify-icon>
-                                    Senin , 07 Agustus 2023 , 08:30 WIB
+                <?php if (!empty($record)) : ?>
+                    <?php foreach ($record as $row) : ?>
+                        <div class="card border-0 shadow mb-3">
+                            <div class="row">
+                                <div class="col-lg-4">
+                                    <img src="<?= base_url('assets/images/kegiatan/' . $row['gambar']); ?>" alt="Kegiatan 1" class="w-100 h-100" />
                                 </div>
-                                <p class="card-text opacity-75" style="text-align: justify">
-                                    Organisasi calandra ini terbentuk karena ingin menampung
-                                    hobi dan kreatifitas mahasiswa/i universitas bina sarana
-                                    informatika yang berorientasi pada kegiatan alam bebas.
-                                    Kemudian tercetuslah nama "Calandra" asal kata dari bahasa
-                                    Yunani yang artinya "Senda gurau" dan disambung dengan
-                                    "adventures" Diresmikan pada tanggal 28 Agustus 1993 oleh
-                                    ketua yayasan bina sarana informatika, Bapak Herman P.
-                                    Haryoso dan menjadi organisasi kegiatan pertama yang ada
-                                    di bina sarana informatika....
-                                </p>
 
-                                <a href="detailKegiatan.html" class="text-primary mt-5 px-0 align-items-center d-flex gap-2 text-decoration-none">
-                                    Baca Selengkapnya
-                                    <iconify-icon icon="formkit:arrowright"></iconify-icon>
-                                </a>
+                                <div class="col-lg-8">
+                                    <div class="card-body">
+                                        <h4 class="card-title mb-2"><?= $row['nama_kegiatan']; ?></h4>
+                                        <div class="d-flex align-items-center gap-4 opacity-50 mb-4">
+                                            <iconify-icon icon="clarity:date-line"></iconify-icon>
+                                            Senin , 07 Agustus 2023 , 08:30 WIB
+                                        </div>
+                                        <p class="card-text opacity-75" style="text-align: justify">
+                                            <?= $row['deskripsi']; ?>
+                                        </p>
+
+                                        <a href="<?= base_url("kegiatan/detail/" . $row['id_kegiatan']) ?>" class="text-primary mt-5 px-0 align-items-center d-flex gap-2 text-decoration-none">
+                                            Baca Selengkapnya
+                                            <iconify-icon icon="formkit:arrowright"></iconify-icon>
+                                        </a>
+                                    </div>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                </div>
-
-                <!-- Kegiatan 2 -->
-                <div class="card border-0 shadow mb-3">
-                    <div class="row">
-                        <div class="col-lg-4">
-                            <img src="/assets/kegiatan/kegiatan2.jpg" alt="Kegiatan 2" class="w-100 h-100" />
-                        </div>
-
-                        <div class="col-lg-8">
-                            <div class="card-body">
-                                <h4 class="card-title mb-2">UKM Kerohanian Islam</h4>
-                                <div class="d-flex align-items-center gap-4 opacity-50 mb-4">
-                                    <iconify-icon icon="clarity:date-line"></iconify-icon>
-                                    Senin , 07 Agustus 2023 , 08:30 WIB
-                                </div>
-                                <p class="card-text opacity-75" style="text-align: justify">
-                                    UKM (Unit Kegiatan Mahasiswa ) Kerohanian Islam UBSI
-                                    (Universitas Bina Sarana Informatika) merupakan suatu
-                                    organisasi ke-Islaman di kalangan mahasiswa BSI yang
-                                    bergerak dibidang Da'wah, Pendidikan, Keterampilan, Seni
-                                    dan Olahraga serta Sosial Kemasyarakatan. Sejarah singkat
-                                    terkait dengan organisasi da’wah kampus pada era akademi
-                                    BSI terdahulu pernah terbentuk Badaris (Badan Da’wah
-                                    Rohani Islam)...
-                                </p>
-
-                                <a href="detailKegiatan.html" class="text-primary mt-5 px-0 align-items-center d-flex gap-2 text-decoration-none">
-                                    Baca Selengkapnya
-                                    <iconify-icon icon="formkit:arrowright"></iconify-icon>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Kegiatan 3 -->
-                <div class="card border-0 shadow mb-3">
-                    <div class="row">
-                        <div class="col-lg-4">
-                            <img src="/assets/kegiatan/kegiatan3.jpeg" alt="Kegiatan 3" class="w-100 h-100" />
-                        </div>
-
-                        <div class="col-lg-8">
-                            <div class="card-body">
-                                <h4 class="card-title mb-2">UKM Musik UBSI</h4>
-                                <div class="d-flex align-items-center gap-4 opacity-50 mb-4">
-                                    <iconify-icon icon="clarity:date-line"></iconify-icon>
-                                    Senin , 07 Agustus 2023 , 08:30 WIB
-                                </div>
-                                <p class="card-text opacity-75" style="text-align: justify">
-                                    UKM Musik memulai pertunjukkan pertamanya pada tahun 1997,
-                                    dengan membuat pertunjukan pertama yaitu background musik.
-                                    Pada 15 September 1998, dibentuklah organisasi unit
-                                    kegiatan mahasiswa (ukm) musik di Bina Sarana Informatika
-                                    (BSI) yang didirikan oleh Rizka, Parto , Parlin, Budi
-                                    ,Jange da AA. Sifat organisasi ini adalah kreatif edukatif
-                                    , kekeluargaan, kebersamaan, dan bertanggung Jawab. ....
-                                </p>
-
-                                <a href="detailKegiatan.html" class="text-primary mt-5 px-0 align-items-center d-flex gap-2 text-decoration-none">
-                                    Baca Selengkapnya
-                                    <iconify-icon icon="formkit:arrowright"></iconify-icon>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                    <?php endforeach ?>
+                <?php endif; ?>
             </div>
         </div>
     </div>

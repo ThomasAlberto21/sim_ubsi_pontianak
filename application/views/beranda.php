@@ -100,25 +100,25 @@
 <!-- Kegiatan Start -->
 <section>
 
-      <div class="container mb-3" style="margin-top: 100px">
-        <div class="row">
-          <div class="col-lg-6 col-12">
-            <img src="<?= base_url('assets/images/kegiatan/' . $kegiatan[0]['gambar']); ?>" class="w-100 h-100 rounded-2" alt="Kegiatan" />
-          </div>
-          <div class="col-lg-6 col-12 my-3">
-            <h1>Kegiatan</h1>
-            <p class="opacity-50"><?= $kegiatan[0]['nama_kegiatan']; ?></p>
-            <p class="opacity-75" style="text-align: justify">
-              <?= $kegiatan[0]['deskripsi']; ?>
-            </p>
-
-            <a href="<?= base_url('kegiatan') ?>" type="button" class="text-primary mt-5 px-0 align-items-center d-flex gap-2 text-decoration-none">
-              Lihat Kegiatan
-              <iconify-icon icon="formkit:arrowright"></iconify-icon>
-            </a>
-          </div>
-        </div>
+  <div class="container mb-3" style="margin-top: 100px">
+    <div class="row">
+      <div class="col-lg-6 col-12">
+        <img src="<?= base_url('assets/images/kegiatan/' . $kegiatan[0]['gambar']); ?>" class="w-100 h-100 rounded-2" alt="Kegiatan" />
       </div>
+      <div class="col-lg-6 col-12 my-3">
+        <h1>Kegiatan</h1>
+        <p class="opacity-50"><?= $kegiatan[0]['nama_kegiatan']; ?></p>
+        <p class="opacity-75" style="text-align: justify">
+          <?= $kegiatan[0]['deskripsi']; ?>
+        </p>
+
+        <a href="<?= base_url('kegiatan') ?>" type="button" class="text-primary mt-5 px-0 align-items-center d-flex gap-2 text-decoration-none">
+          Lihat Kegiatan
+          <iconify-icon icon="formkit:arrowright"></iconify-icon>
+        </a>
+      </div>
+    </div>
+  </div>
 
 </section>
 <!-- Kegiatan End -->
@@ -140,7 +140,13 @@
     <div class="row row-cols-1 row-cols-md-2 g-4 my-2">
       <!-- Berita 1 -->
       <?php if (!empty($berita)) : ?>
-        <?php foreach ($berita as $b) : ?>
+        <?php
+        $articleCounter = 0;
+        foreach ($berita as $b) :
+          if ($articleCounter >= 4) {
+            break;
+          }
+        ?>
           <div class="col">
             <div class="card">
               <img src="<?= base_url('assets/images/berita/' . $b['gambar']); ?>" class="card-img-top w-100 img-fluid" alt="Berita 1" />
@@ -162,7 +168,9 @@
               </div>
             </div>
           </div>
-        <?php endforeach; ?>
+        <?php
+          $articleCounter++;
+        endforeach; ?>
       <?php endif; ?>
     </div>
   </div>

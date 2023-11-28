@@ -62,4 +62,9 @@ class Prestasi_model extends CI_Model
     {
         return $this->db->get_where('prestasi', ['id_prestasi' => $id])->row_array();
     }
+    public function baca_detail($id)
+    {
+        $query = $this->db->query("SELECT * FROM prestasi WHERE id_prestasi='$id'");
+        return $query->result_array();
+    }
 }

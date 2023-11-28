@@ -82,8 +82,19 @@ class Kegiatan extends CI_Controller
 
     public function delete_kegiatan($id = 0)
     {
-
         $this->Kegiatan_model->delete($id, 'kegiatan');
         redirect(base_url('admin/kegiatan/index'));
+    }
+
+    public function detail($id)
+    {
+        $data = array(
+            'record' => $this->Kegiatan_model->baca_detail($id),
+        );
+        $data['judul'] = "Kegiatan";
+        $this->load->view('template/header', $data);
+        $this->load->view('template/navbar', $data);
+        $this->load->view('kegiatan/v_kegiatan', $data);
+        $this->load->view('template/footer', $data);
     }
 }

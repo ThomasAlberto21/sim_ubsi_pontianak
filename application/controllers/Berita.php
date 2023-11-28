@@ -87,4 +87,16 @@ class Berita extends CI_Controller
         $this->Berita_model->delete($id, 'berita');
         redirect(base_url('admin/berita/index'));
     }
+
+    public function detail($id)
+    {
+        $data = array(
+            'record' => $this->Berita_model->baca_detail($id),
+        );
+        $data['judul'] = "Detail Berita";
+        $this->load->view('template/header', $data);
+        $this->load->view('template/navbar', $data);
+        $this->load->view('berita/v_berita', $data);
+        $this->load->view('template/footer', $data);
+    }
 }

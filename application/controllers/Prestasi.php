@@ -86,4 +86,16 @@ class Prestasi extends CI_Controller
         $this->Prestasi_model->delete($id, 'prestasi');
         redirect(base_url('admin/prestasi/index'));
     }
+
+    public function detail($id)
+    {
+        $data = array(
+            'record' => $this->Prestasi_model->baca_detail($id),
+        );
+        $data['judul'] = "Detail Prestasi";
+        $this->load->view('template/header', $data);
+        $this->load->view('template/navbar', $data);
+        $this->load->view('prestasi/v_prestasi', $data);
+        $this->load->view('template/footer', $data);
+    }
 }

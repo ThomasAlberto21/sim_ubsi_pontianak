@@ -63,5 +63,9 @@ class Berita_model extends CI_Model
     {
         return $this->db->get_where('berita', ['id_berita' => $id])->row_array();
     }
-    
+    public function baca_detail($id)
+    {
+        $query = $this->db->query("SELECT * FROM berita WHERE id_berita='$id'");
+        return $query->result_array();
+    }
 }
